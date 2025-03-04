@@ -7,18 +7,27 @@
 <body>
    <h1>始まり</h1>
   <script>
+  let res = await fetch(test.json);
+
+  // JSON を正常に読み込めていれば処理
+  if(res.ok) {
+    // JSON を配列に入れる
+    let json_array = await res.json();
+    alert(json_array[0]['name']);// -> Kozue
+  }
+    
     //urlからデータを読み込む
-      fetch('test.json')
+      //fetch('test.json')
     //データを受け取って、加工・成形
-      .then(response => {
+      //.then(response => {
         //jsonはオブジェクト（連想配列）
-        return response.json()
-      })
-      .then(data => {
-        alert('成功しました。' + data[0]['name'])
+        //return response.json()
+      //})
+      //.then(data_array => {
+      //  alert('成功しました。' + data_array[0]['name'])
         // const p = document.createElement('p')
         // p.textContent=data.name
-        })
+        //})
     //通信にエラーが発生した場合
       //.catch(error => {console.log(error)})
     // 外部ファイルを読み込む
