@@ -23,12 +23,12 @@
         return response.json()
       })
       .then(data => {
-        alert('ファイルの読み込み成功しましたよ。' + data['id'] + data['name'] +data['age'])
+        alert('ファイルの読み込み成功しましたよ。' + data[0]['id'] + data[0]['name'] +data[0]['age'])
         // const p = document.createElement('p')
         // p.textContent=data.name
        })
     //通信にエラーが発生した場合
-      .catch(error => {alert('Error')})
+      .catch(error => {alert('ファイルを読み込むことができませんでした。')})
     // 外部ファイルを読み込む
     // import data from "./data.json" assert{type: "json" };
     // console.log(data);
