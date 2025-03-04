@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>fetchの使い方</title>
+</head>
+<body>
+  <script type="module">
+    //urlからデータを読み込む
+    console.log("始まり");
+    fetch('data.json')
+    //データを受け取って、加工・成形
+      .then(response => {
+        //jsonはオブジェクト（連想配列）
+        return response.json()
+      })
+      .then(data => {
+        console.log(data)
+        // const p = document.createElement('p')
+        // p.textContent=data.name
+        })
+    //通信にエラーが発生した場合
+      .catch(error => {console.log(error)})
+    // 外部ファイルを読み込む
+    // import data from "./data.json" assert{type: "json" };
+    // console.log(data);
+    console.log("終わり");
+</script>  
+</body>
+</html>
