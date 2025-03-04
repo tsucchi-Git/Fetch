@@ -8,14 +8,14 @@
    <h1>始まり</h1>
   <script>
     //urlからデータを読み込む
-      fetch('data.json')
+      fetch('test.json')
     //データを受け取って、加工・成形
       .then(response => {
         //jsonはオブジェクト（連想配列）
         return response.json()
       })
       .then(data => {
-        alert('data')
+        alert(data)
         // const p = document.createElement('p')
         // p.textContent=data.name
         })
