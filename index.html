@@ -7,28 +7,28 @@
 <body>
    <h1>始まり</h1>
   <script>
-  let res = await fetch('test.json');
+  //let res = await fetch('test.json');
   // JSON を正常に読み込めていれば処理
-  if(res.ok) {
+  //if(res.ok) {
     // JSON を配列に入れる
-    let json_array = await res.json();
-    alert('成功しました。') // + json_array[0]['name'])
-  }
+    //let json_array = await res.json();
+    //alert('成功しました。') // + json_array[0]['name'])
+  //}
     
     //urlからデータを読み込む
-      //fetch('test.json')
+      fetch('test1.json')
     //データを受け取って、加工・成形
-      //.then(response => {
+      .then(response => {
         //jsonはオブジェクト（連想配列）
-        //return response.json()
-      //})
-      //.then(data_array => {
-      //  alert('成功しました。' + data_array[0]['name'])
+        return response.json()
+      })
+      .then(data => {
+        alert('成功しました。' + data['name'])
         // const p = document.createElement('p')
         // p.textContent=data.name
-        //})
+       })
     //通信にエラーが発生した場合
-      //.catch(error => {console.log(error)})
+      .catch(error => {alert('Error')})
     // 外部ファイルを読み込む
     // import data from "./data.json" assert{type: "json" };
     // console.log(data);
