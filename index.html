@@ -5,39 +5,26 @@
   <title>fetchの使い方</title>
 </head>
 <body>
-   <h1>始まり</h1>
+   <h1>Fetchでデータを読み込む</h1>
+  Var FileName='test.json'
+  getMarkerData(FileName)
   <script>
-  //let res = await fetch('test.json');
-  // JSON を正常に読み込めていれば処理
-  //if(res.ok) {
-    // JSON を配列に入れる
-    //let json_array = await res.json();
-    //alert('成功しました。') // + json_array[0]['name'])
-  //}
-    
+    function getMarkerData(url){
     //urlからデータを読み込む
-      fetch('test.json')
+      fetch(url)
     //データを受け取って、加工・成形
       .then(response => {
         //jsonはオブジェクト（連想配列）
         return response.json()
       })
       .then(markerList => {
-        //var markerList_text;
         for (var i = 0; i < markerList.length; i++) {
-          //markerList_text= markerList_text + markerList[i]['id'] + markerList[i]['name'] +markerList[i]['age'] + '\n'
-        //var i=1;
-        alert('ファイルの読み込み成功しましたよ。' + markerList[i]['id'] + markerList[i]['name'] +markerList[i]['age'] + '\n')
+          alert('ファイルの読み込み成功しましたよ。' + markerList[i]['id'] + markerList[i]['name'] +markerList[i]['age'] + '\n')
         }
-        // const p = document.createElement('p')
-        // p.textContent=data.name
        })
     //通信にエラーが発生した場合
       .catch(error => {alert('ファイルを読み込むことができませんでした。')})
-    // 外部ファイルを読み込む
-    // import data from "./data.json" assert{type: "json" };
-    // console.log(data);
-    //console.log("終わり");
+    }
 </script>  
 </body>
 </html>
