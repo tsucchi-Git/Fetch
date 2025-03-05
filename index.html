@@ -5,9 +5,7 @@
   <title>fetchの使い方</title>
 </head>
 <body>
-   <h1>Fetchでデータを読み込む</h1>
-  Var FileName='test.json';
-  getMarkerData(FileName);
+  <h1>Fetchでデータを読み込む</h1>
   <script>
     function getMarkerData(url){
     //urlからデータを読み込む
@@ -25,6 +23,8 @@
     //通信にエラーが発生した場合
       .catch(error => {alert('ファイルを読み込むことができませんでした。')})
     }
+    Var FileName='test.json';
+    getMarkerData(FileName);
 </script>  
 </body>
 </html>
