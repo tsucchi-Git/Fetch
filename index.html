@@ -23,12 +23,12 @@
         return response.json()
       })
       .then(markerList => {
-        var markerList_text;
-        //for (var i = 0; i < markerList.length; i++) {
+        //var markerList_text;
+        for (var i = 0; i < markerList.length; i++) {
           //markerList_text= markerList_text + markerList[i]['id'] + markerList[i]['name'] +markerList[i]['age'] + '\n'
-        var i=1;
+        //var i=1;
         alert('ファイルの読み込み成功しましたよ。' + markerList[i]['id'] + markerList[i]['name'] +markerList[i]['age'] + '\n')
-        //}
+        }
         // const p = document.createElement('p')
         // p.textContent=data.name
        })
