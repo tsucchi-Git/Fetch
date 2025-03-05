@@ -2,12 +2,12 @@
 <html>
 <head>
   <meta charset="UTF-8" />
-  <title>fetchの使い方</title>
+  <title>関数fetchの使い方</title>
 </head>
 <body>
   <h1>Fetchでデータを読み込む</h1>
   <script>
-    //function getMarkerData(url){
+    function getMarkerData(url){
     //urlからデータを読み込む
       fetch('test.json')
     //データを受け取って、加工・成形
@@ -22,9 +22,9 @@
        })
     //通信にエラーが発生した場合
       .catch(error => {alert('ファイルを読み込むことができませんでした。')})
-    //}
-    //Var FileName='test.json';
-    //getMarkerData(FileName);
+    }
+    Var FileName='test.json';
+    getMarkerData(FileName);
 </script>  
 </body>
 </html>
