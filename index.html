@@ -5,7 +5,7 @@
   <title>fetchの使い方</title>
 </head>
 <body>
-  <h1>Fetchでデータを読み込む（関数）1</h1>
+  <h1>Fetchでデータを読み込む（関数）2</h1>
   <script>
     //Var FileName='test.json';
     //var markerList;
@@ -19,10 +19,10 @@
         return response.json()
       })
       .then(markerList => {
-       //  for (var i = 0; i < markerList.length; i++) {
-       //    alert('ファイルの読み込み成功しましたよ。' + markerList[i]['id'] + markerList[i]['name'] +markerList[i]['age'] + '\n')
-       //  }
-        })
+        for (var i = 0; i < markerList.length; i++) {
+          alert('ファイルの読み込み成功しましたよ。' + markerList[i]['id'] + markerList[i]['name'] +markerList[i]['age'] + '\n')
+        }
+       })
     //通信にエラーが発生した場合
       .catch(error => {alert('ファイルを読み込むことができませんでした。')})
     }
