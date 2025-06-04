@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Fetchでデータを読み込んでローカルストレージに書き込む</h1>
+  <button onclick="navigate()">ローカルストレージの読み込み</button>  
+</body>
+<script>
+    function navigate(){
+      if (window.localStorage){
+        let json=localStorage.getItem('basic_data_fetch'); //ローカルストレージからキー「sbasic_data_fetch」で保存したデータを取得
+        let array=JSON.parse(json);  //取得したJSONデータを配列に変換し、配列名をarray（任意）とする
+        for (var i = 0; i < Uint32Array.length; i++) {
+          alert('JSONファイルの読み込み成功しましたよ。' + array[i].id + ',' + array[i].name + ',' + array[i].exp + '\n')
+        //document.write(markerList[i]['id'])
+        }        
+      } else {
+        alert('ローカルストレージは使えません')
+      };
+
+
+    }
+
+
+</script>
+</html>
