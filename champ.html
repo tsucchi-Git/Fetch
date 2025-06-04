@@ -6,7 +6,7 @@
   <title>Document</title>
 </head>
 <body>
-  <h1>Fetchでデータを読み込んでローカルストレージに書き込む</h1>
+  <h1>ローカルストレージからデータを読み込む1</h1>
   <button onclick="navigate()">ローカルストレージの読み込み</button>  
 </body>
 <script>
@@ -14,6 +14,7 @@
       if (window.localStorage){
         let json=localStorage.getItem('basic_data_fetch'); //ローカルストレージからキー「sbasic_data_fetch」で保存したデータを取得
         let array=JSON.parse(json);  //取得したJSONデータを配列に変換し、配列名をarray（任意）とする
+        alert(array.length);
         for (var i = 0; i < array.length; i++) {
           alert('JSONファイルの読み込み成功しましたよ。' + array[i].id + ',' + array[i].name + ',' + array[i].exp + '\n')
         //document.write(markerList[i]['id'])
