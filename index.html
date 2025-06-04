@@ -5,10 +5,17 @@
   <title>fetchの使い方</title>
 </head>
 <body>
-  <h1>Fetchでデータを読み込む（関数）0</h1>
+  <h1>Fetchでデータを読み込んでローカルストレージに書き込む</h1>
+  ＜button onclick="navigate()">ページ遷移</button>
+</body>
   <script>
     //Var FileName='test.json';
+
     getMarkerData();
+    function navigate(){
+      windows.location.href="chanp.html";
+    }
+    
     function getMarkerData()　{
     //urlからデータを読み込む
       fetch('test2.json')
@@ -23,6 +30,13 @@
           alert('ファイルの読み込み成功しましたよ。' + markerList[i].id + ',' + markerList[i].name + ',' +　markerList[i].file + '\n')
         //document.write(markerList[i]['id'])
         }
+          //ローカルストレージに災害碑の基礎データを保存
+          if(window.localStorage){
+            //配列markerListをJSONデータに変換し、json_stringという変数に一括代入し、 ローカルストレージに書き込み　キーは「basic_data_fetch」
+            let json_string=JSON.stringify(markerList);   
+            localStorage.setItem('basic_data_fetch',json_string);
+          } 
+          
         
        })
     //通信にエラーが発生した場合
